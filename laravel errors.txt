@@ -1,0 +1,17 @@
+DATABASE ERROR
+
+how to remove database error from updated laravel 5.4
+
+app>providers>appServiceProvider>fun_boot
+
+Schema::defaultStringLength(191);
+
+after namespace = use Illuminate\Support\Facades\Schema;
+
+
+
+EMAIL ERROR
+
+solve forget password resend email problem
+
+ctrl p = search = ResetPassword.php = remove blank part only = url(config('app.url').__________,false)
