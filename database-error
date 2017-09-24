@@ -1,0 +1,21 @@
+error:
+SQLSTATE[42000]: Syntax error or access violation: 1055 'admin.products.name' isn't in GROUP BY (SQL: select `products`.*, 
+SUM(products_stock.stock) from `products` inner join `products_stock` on `products_stock`.`product_id` = `products`.`id` group by `products`.`id`)
+
+solution:
+write false for 'strike'
+config/database.php
+
+<?php
+return [
+.....
+'connections' => [
+		......
+		'mysql'[
+			.....
+			'strict' => false,
+			.....
+		]
+	]
+]
+
